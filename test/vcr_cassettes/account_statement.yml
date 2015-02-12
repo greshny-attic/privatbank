@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.privatbank.ua/p24api/rest_fiz
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><request version="1.0"><merchant><id>some-id-of-merchant</id><signature>bafe41ad4d7ed743b57b7ec0af6e486ee94ef396</signature></merchant><data><oper>cmt</oper><wait>0</wait><payment
+        id=""><prop name="sd" value="01.01.2001"/><prop name="ed" value="01.01.2002"/><prop
+        name="card" value="1111222233334444"/></payment></data></request>
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 22 Nov 2014 15:34:45 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '<error>For input string: "some-id-of-merchant"</error>'
+    http_version: 
+  recorded_at: Sat, 22 Nov 2014 15:34:45 GMT
+recorded_with: VCR 2.9.3

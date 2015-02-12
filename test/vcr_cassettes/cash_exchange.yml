@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.privatbank.ua/p24api/pubinfo?coursid=5&exchange
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 22 Nov 2014 15:32:44 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><exchangerates><row><exchangerate
+        ccy="RUR" base_ccy="UAH" buy="0.33000" sale="0.36000"/></row><row><exchangerate
+        ccy="EUR" base_ccy="UAH" buy="19.30000" sale="20.10000"/></row><row><exchangerate
+        ccy="USD" base_ccy="UAH" buy="15.50000" sale="15.80000"/></row></exchangerates>
+    http_version: 
+  recorded_at: Sat, 22 Nov 2014 15:32:44 GMT
+recorded_with: VCR 2.9.3
