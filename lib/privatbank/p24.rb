@@ -1,6 +1,7 @@
 require 'privatbank/p24/account_statement'
 require 'privatbank/p24/send_money_pb'
 require 'privatbank/p24/send_money_visa'
+require 'privatbank/p24/info'
 
 module Privatbank
   module P24
@@ -20,6 +21,12 @@ module Privatbank
       options.merge!(merchant_id:       Privatbank.configuration.merchant_id,
                      merchant_password: Privatbank.configuration.merchant_password)
       SendMoneyVisa.new(receiver, full_name, payment_id, amount, currency, details, options).request
+    end
+
+    def self.info card_number, country = 'UA', options = {}
+      options.merge!(merchant_id:       Privatbank.configuration.merchant_id,
+                     merchant_password: Privatbank.configuration.merchant_password)
+      Info.new(card_number, country, options).request
     end
   end
 end
