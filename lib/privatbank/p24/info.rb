@@ -19,8 +19,8 @@ module Privatbank
       end
 
       def request
-        response = self.class.post('/p24api/balance', body: outgoing_xml)['response']['data']
-        response['error'] || response['info']['cardbalance']
+        response = self.class.post('/p24api/balance', body: outgoing_xml)
+        response['error'] || response['response']['data']['info']['cardbalance']
       end
 
       def outgoing_xml
