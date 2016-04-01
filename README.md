@@ -75,6 +75,50 @@ Privatbank::P24::ExchangeRates.card
 #     {"ccy"=>"USD", "base_ccy"=>"UAH", "buy"=>"15.09624", "sale"=>"15.09624"}]
 ```
 
+#### Send money
+
+For sending money to privatbank/visa cards:
+
+```ruby
+require 'privatbank/p24'
+
+receiver          = '1111222233334444'
+full_name         = 'Some Full Name' #only for visa cards
+payment_id        = '12345'
+amount            = 100
+currency 		  = 'UAH' #optional
+details           = 'some-details'
+
+Privatbank::P24.send_money_pb(receiver, payment_id, amount, details)
+Privatbank::P24.send_money_visa(receiver, full_name, payment_id, amount, details)
+```
+
+#### Payment status
+
+For obtaining payment current state:
+
+```ruby
+require 'privatbank/p24'
+
+payment_id        = 'some-id'
+ref               = 'P123451234512341'
+
+Privatbank::P24.payment_status(payment_id, ref)
+```
+
+#### Card info
+
+For obtaining balance and other information:
+
+```ruby
+require 'privatbank/p24'
+
+card_number       = '1111222233334444'
+country			  = 'UA' #optional
+
+Privatbank::P24.info(card_number)
+```
+
 ## Contributing
 
 1. Fork it ( https://github.com/greshny/privatbank/fork )
