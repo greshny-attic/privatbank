@@ -7,7 +7,7 @@ Privatbank API wrapper
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'privatbank'
+gem 'privatbank', '~> 0.0.2'
 ```
 
 And then execute:
