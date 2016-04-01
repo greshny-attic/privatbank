@@ -1,4 +1,4 @@
-# Privatbank
+# Privatbank [![Build Status](https://travis-ci.org/greshny/privatbank.svg?branch=master)](https://travis-ci.org/greshny/privatbank)
 
 Privatbank API wrapper
 
