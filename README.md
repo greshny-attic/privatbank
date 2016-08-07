@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-For usage privat24 you need to [get credentials](https://api.privatbank.ua/manual_reg_fiz.pptx)
+For usage privat24 you need to [get credentials](https://api.privatbank.ua/p24registration.html)
 
 ```ruby
 require 'privatbank'
