@@ -23,7 +23,9 @@ module Privatbank
       def request
         response = self.class.post('/p24api/rest_fiz', body: outgoing_xml)
         return [] if response.fetch('error', nil)
-        response['response']['data']['info']['statements']['statement'].map do |operation|
+        statements = response['response']['data']['info']['statements']['statement']
+        statements = [statements] if statements.is_a?(Hash)
+        statements.map do |operation|
           Items::Transaction.new( date:           operation['trandate'],
                                   time:           operation['trantime'],
                                   amount:         operation['amount'],
