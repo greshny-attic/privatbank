@@ -27,7 +27,7 @@ require 'privatbank'
 
 Privatbank.configure do |config|
   config.merchant_id = 'your-merchant-id'
-  config.merchand_password = 'your-merchant-password'
+  config.merchant_password = 'your-merchant-password'
 end
 ```
 
