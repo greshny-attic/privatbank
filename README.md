@@ -82,12 +82,12 @@ For sending money to privatbank/visa cards:
 ```ruby
 require 'privatbank/p24'
 
-receiver          = '1111222233334444'
-full_name         = 'Some Full Name' #only for visa cards
-payment_id        = '12345'
-amount            = 100
-currency 		  = 'UAH' #optional
-details           = 'some-details'
+receiver   = '1111222233334444'
+full_name  = 'Some Full Name' #only for visa cards
+payment_id = '12345'
+amount     = 100
+currency   = 'UAH' #optional
+details    = 'some-details'
 
 Privatbank::P24.send_money_pb(receiver, payment_id, amount, details)
 Privatbank::P24.send_money_visa(receiver, full_name, payment_id, amount, details)
@@ -100,8 +100,8 @@ For obtaining payment current state:
 ```ruby
 require 'privatbank/p24'
 
-payment_id        = 'some-id'
-ref               = 'P123451234512341'
+payment_id = 'some-id'
+ref        = 'P123451234512341'
 
 Privatbank::P24.payment_status(payment_id, ref)
 ```
@@ -113,8 +113,8 @@ For obtaining balance and other information:
 ```ruby
 require 'privatbank/p24'
 
-card_number       = '1111222233334444'
-country			  = 'UA' #optional
+card_number = '1111222233334444'
+country     = 'UA' #optional
 
 Privatbank::P24.info(card_number)
 ```
