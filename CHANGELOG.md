@@ -3,7 +3,7 @@
 *   [FEATURE] get information about payment
 *   [FEATURE] get information about card
 
-    *@naumenkogs*
+    *[@naumenkogs](https://github.com/naumenkogs)*
 
 # 0.0.1 / 2015-02-15
 *   Initial release
